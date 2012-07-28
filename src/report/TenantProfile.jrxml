@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="TenantProfile" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="71310ab8-8f72-4859-88ca-bcd85cc47238">
+	<property name="ireport.zoom" value="1.6105100000000008"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="144"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<parameter name="tenantIDParam" class="java.lang.String">
+		<defaultValueExpression><![CDATA[thaichau]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT * FROM Tenant WHERE tenantID = $P{tenantIDParam}]]>
+	</queryString>
+	<field name="tenantID" class="java.lang.String"/>
+	<field name="password" class="java.lang.String"/>
+	<field name="firstname" class="java.lang.String"/>
+	<field name="lastname" class="java.lang.String"/>
+	<field name="phone" class="java.lang.String"/>
+	<field name="email" class="java.lang.String"/>
+	<field name="currentAddress" class="java.lang.String"/>
+	<field name="cityStateZip" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="d47bcb5f-386e-447e-b47c-bc47adac5552" style="Title" x="156" y="11" width="263" height="33" forecolor="#339900"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Tenant Profiles]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="25" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="f955307e-f66a-455d-9605-3a319e6d8702" x="231" y="0" width="43" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Profile]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="261c262c-1eb2-4322-8fb4-ec8ff60de803" x="274" y="0" width="100" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tenantID}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="150" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="4c93ad54-6b53-4890-b196-896240c53e31" style="Column header" x="73" y="16" width="79" height="15"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[TenantID:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="f4a9167a-d9f9-4297-836a-fcc8b87f4f5e" style="Detail" x="231" y="16" width="214" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{tenantID}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="c8bce1b2-d32e-42d7-a0e0-ba0a75109801" style="Column header" x="73" y="31" width="79" height="15"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Firstname:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="a9e22699-0cab-4765-9ee6-e435f1070556" style="Detail" x="231" y="31" width="214" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{firstname}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="c70f1da8-f10b-47f6-849f-cd323bb1c8c3" style="Column header" x="73" y="46" width="79" height="15"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Lastname:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="ca954a71-7ee8-4e76-aef1-d72543cdab59" style="Detail" x="231" y="46" width="214" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{lastname}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="1346df9a-2344-40b0-a169-163418c5a3fe" style="Column header" x="73" y="61" width="79" height="15"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Phone:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="b74a2083-3ced-4551-8c1e-d082cc27bd22" style="Detail" x="231" y="61" width="214" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{phone}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="9bfb10e3-42be-482e-854f-7a6bc1656708" style="Column header" x="73" y="76" width="79" height="15"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Email:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="7b940feb-a085-4abd-84b0-82d0dc705677" style="Detail" x="231" y="76" width="214" height="15"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA[$F{email}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="7829feea-8b6f-45a7-bf1d-64cfbec7a41e" style="Column header" x="73" y="91" width="79" height="15"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Address:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="8df4c7da-e163-47fc-bf27-e35874d89208" style="Detail" x="231" y="91" width="322" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{currentAddress}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="2c027ba5-7395-471e-a09d-3d16b10089d7" style="Column header" x="73" y="106" width="79" height="15"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Zip:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="23a8098c-9350-4ff8-b415-97e09438ae2d" style="Detail" x="231" y="106" width="214" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{cityStateZip}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="15" splitType="Stretch">
+			<line>
+				<reportElement uuid="2a95c2e9-daad-4d0b-b0ab-837b24869f32" positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement uuid="dba8577f-d71d-4166-8df5-fce8a3dd8210" style="Column header" x="433" y="0" width="80" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="7c570888-2fdf-4527-a82a-0fec765ec90c" style="Column header" x="513" y="0" width="40" height="20"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement uuid="556c393b-ecb0-4976-aab8-8289cfa39a86" style="Column header" x="0" y="0" width="197" height="20"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="1582c665-696d-40bc-ba0e-2f14f7aee244" x="197" y="0" width="143" height="20" forecolor="#009900"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[AMS System Report]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
